@@ -9,7 +9,7 @@ const Cosigner = require('../lib/primitives/cosigner');
 const {ApprovalsMapRecord} = Proposal;
 const {RejectionsMapRecord} = Proposal;
 const {SignaturesRecord} = Proposal;
-const {hd} = require('bcoin');
+const hd = require('bcash/lib/hd/hd');
 const secp256k1 = require('bcrypto/lib/secp256k1');
 
 const ZERO_SIG = Buffer.alloc(65, 0x00);

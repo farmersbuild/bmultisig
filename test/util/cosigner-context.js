@@ -3,8 +3,8 @@
 const util = require('util');
 const assert = require('bsert');
 const custom = require('../../lib/utils/inspect');
-const hd = require('bcoin/lib/hd');
-const Network = require('bcoin/lib/protocol/network');
+const hd = require('bcash/lib/hd');
+const Network = require('bcash/lib/protocol/network');
 const hash160 = require('bcrypto/lib/hash160');
 const secp256k1 = require('bcrypto/lib/secp256k1');
 

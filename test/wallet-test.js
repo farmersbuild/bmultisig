@@ -5,9 +5,11 @@
 
 const assert = require('bsert');
 const Logger = require('blgr');
-const {wallet, hd, Network} = require('bcoin');
-const {WalletDB, MasterKey} = wallet;
-const {Mnemonic} = hd;
+const Network = require('bcash/lib/protocol/network');
+const HD = require('bcash/lib/hd');
+const WalletDB = require('bcash/lib/wallet/walletdb');
+const MasterKey = require('bcash/lib/wallet/masterkey');
+const {Mnemonic} = HD;
 
 const MultisigDB = require('../lib/multisigdb');
 const WalletNodeClient = require('../lib/walletclient');
@@ -763,7 +765,7 @@ describe('MultisigWallet', function () {
 function generateMaster() {
   const master = new MasterKey();
   const mnemonic = new Mnemonic();
-  const key = hd.fromMnemonic(mnemonic);
+  const key = HD.fromMnemonic(mnemonic);
 
   master.fromKey(key, mnemonic);
 

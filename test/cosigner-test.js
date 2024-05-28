@@ -6,7 +6,7 @@
 const assert = require('bsert');
 const Cosigner = require('../lib/primitives/cosigner');
 const bufio = require('bufio');
-const {hd} = require('bcoin');
+const HD = require('bcash/lib/hd/hd');
 const secp256k1 = require('bcrypto/lib/secp256k1');
 const sigUtils = require('../lib/utils/sig');
 
@@ -15,7 +15,7 @@ const privKey = secp256k1.privateKeyGenerate();
 // commonly used test case
 const NETWORK = 'main';
 
-const accountPrivateKey = hd.generate();
+const accountPrivateKey = HD.generate();
 const accountPublicKey = accountPrivateKey.toPublic();
 
 const TEST_OPTIONS = {
