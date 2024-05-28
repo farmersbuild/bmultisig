@@ -1,10 +1,22 @@
 {
   "name": "bmultisig",
   "version": "2.0.0-beta.2",
-  "description": "Bcoin wallet plugin for multi signature transaction proposals",
-  "repository": "git://github.com/bcoin-org/bmultisig.git",
-  "homepage": "https://github.com/bcoin-org/bmultisig",
-  "main": "./lib/plugin",
+  "description": "Bitcoin cash wallet plugin for multi signature transaction proposals",
+  "license": "MIT",
+  "repository": "git://github.com/farmersbuild/bmultisig.git",
+  "homepage": "https://github.com/farmersbuild/bmultisig",
+  "bugs": {
+    "url": "https://github.com/farmersbuild/bmultisig/issues"
+  },
+  "author": "bcoin",
+  "keywords": [
+    "bitcoin cash",
+    "bitcoin",
+    "blockchain",
+    "cryptocurrency",
+    "wallet"
+  ],
+  "main": "./lib/bmultisig.js",
   "bin": {
     "bmultisig": "./bin/bmultisig"
   },
@@ -12,45 +24,43 @@
     "node": ">=10.0.0"
   },
   "scripts": {
+    "browserify": "browserify -s bmultisig lib/bmultisig-browser.js | uglifyjs -c > bmultisig.js",
+    "clean": "rm -rf coverage && rm -rf docs",
     "lint": "eslint lib/ test/ || exit 0",
     "lint-ci": "eslint lib/ test/",
     "test": "bmocha --reporter spec test/*-test.js",
     "test-ci": "nyc -a -n 'lib/**/*.js' --reporter=lcov --reporter=text npm test",
-    "docs": "jsdoc -c jsdoc.json",
-    "clean": "rm -rf coverage && rm -rf docs"
+    "docs": "jsdoc -c jsdoc.json"
   },
-  "keywords": [
-    "bcoin",
-    "bitcoin",
-    "blockchain",
-    "wallet",
-    "multisig"
-  ],
-  "author": "bcoin",
-  "license": "MIT",
   "dependencies": {
-    "bcoin": "git+https://github.com/bcoin-org/bcoin#semver:^2.1.2",
-    "bcfg": "git+https://github.com/bcoin-org/bcfg.git#semver:^0.1.6",
-    "bcrypto": "git+https://github.com/bcoin-org/bcrypto#semver:~5.0.4",
-    "bcurl": "git+https://github.com/bcoin-org/bcurl#semver:~v0.1.6",
-    "bsock": "git+https://github.com/bcoin-org/bsock#semver:~v0.1.9",
-    "brq": "git+https://github.com/bcoin-org/brq#semver:~v0.1.8",
-    "bdb": "git+https://github.com/bcoin-org/bdb#semver:~1.2.1",
-    "bevent": "git+https://github.com/bcoin-org/bevent#semver:~0.1.5",
-    "blgr": "git+https://github.com/bcoin-org/blgr#semver:~0.1.7",
-    "bmutex": "git+https://github.com/bcoin-org/bmutex#semver:~0.1.6",
-    "bsert": "git+https://github.com/chjj/bsert#semver:0.0.10",
+    "bcash": "git+https://github.com/educationofjon/bcash",
+    "bcfg": "git+https://github.com/bcoin-org/bcfg",
+    "bcrypto": "git+https://github.com/bcoin-org/bcrypto",
+    "bcurl": "git+https://github.com/bcoin-org/bcurl",
+    "bdb": "git+https://github.com/bcoin-org/bdb",
+    "bdns": "git+https://github.com/bcoin-org/bdns",
+    "bevent": "git+https://github.com/bcoin-org/bevent",
+    "bfile": "git+https://github.com/bcoin-org/bfile",
+    "bfilter": "git+https://github.com/bcoin-org/bfilter",
+    "bheep": "git+https://github.com/bcoin-org/bheep",
+    "binet": "git+https://github.com/bcoin-org/binet",
+    "blgr": "git+https://github.com/bcoin-org/blgr",
+    "blru": "git+https://github.com/bcoin-org/blru",
+    "blst": "git+https://github.com/bcoin-org/blst",
+    "bmutex": "git+https://github.com/bcoin-org/bmutex",
+    "bsocks": "git+https://github.com/bcoin-org/bsocks",
+    "btcp": "git+https://github.com/bcoin-org/btcp",
     "buffer-map": "git+https://github.com/chjj/buffer-map#semver:0.0.7",
-    "bufio": "git+https://github.com/bcoin-org/bufio#semver:^1.0.6",
-    "bval": "git+https://github.com/bcoin-org/bval#semver:^0.1.6",
-    "bweb": "git+https://github.com/bcoin-org/bweb#semver:^0.1.9",
-    "loady": "git+https://github.com/chjj/loady#semver:~0.0.1",
-    "nan": "git+https://github.com/braydonf/nan.git#semver:=2.14.0"
+    "bupnp": "git+https://github.com/bcoin-org/bupnp",
+    "bval": "git+https://github.com/bcoin-org/bval",
+    "bweb": "git+https://github.com/bcoin-org/bweb",
+    "n64": "git+https://github.com/chjj/n64.git#semver:~0.2.10",
+    "uglify-es": "^3.3.9"
   },
   "devDependencies": {
     "bmocha": "git+https://github.com/bcoin-org/bmocha#semver:^2.1.2"
   },
   "browser": {
-    "./lib/bmultisig": "./lib/bmultisig-browser"
+    "./lib/bmultisig": "./lib/bmultisig-browser.js"
   }
 }
