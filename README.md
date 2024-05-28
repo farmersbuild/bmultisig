@@ -3,13 +3,13 @@
 [![CircleCi Status][circleci-status-img]][circleci-status-url]
 [![Coverage Status][coverage-status-img]][coverage-status-url]
 
-bmultisig is a [bcoin][bcoin] plugin which adds multisig wallet http endpoints and events to bwallet for payment proposals.
+bmultisig is a [bcash][bcash] plugin which adds multisig wallet http endpoints and events to bwallet for payment proposals.
 
 ## Usage
 
 ``` bash
 $ npm install -g bmultisig
-$ bcoin --no-wallet
+$ bcash --no-wallet
 $ bmultisig
 ```
 
@@ -25,7 +25,7 @@ Copyright (c) 2018, The Bcoin Developers (MIT License)
 
 See LICENSE for more info.
 
-[bcoin]: https://github.com/bcoin-org/bcoin
+[bcash]: https://github.com/educationofjon/bcash
 
 [coverage-status-img]: https://codecov.io/gh/bcoin-org/bmultisig/badge.svg?branch=master
 [coverage-status-url]: https://codecov.io/gh/bcoin-org/bmultisig?branch=master
