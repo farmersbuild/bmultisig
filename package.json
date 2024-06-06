@@ -21,7 +21,7 @@
     "bmultisig": "./bin/bmultisig"
   },
   "engines": {
-    "node": ">=10.0.0"
+    "node": ">=14.0.0"
   },
   "scripts": {
     "browserify": "browserify -s bmultisig lib/bmultisig-browser.js | uglifyjs -c > bmultisig.js",
@@ -33,9 +33,9 @@
     "docs": "jsdoc -c jsdoc.json"
   },
   "dependencies": {
-    "bcash": "git+https://github.com/educationofjon/bcash",
+    "bcash": "git+https://github.com/farmersbuild/bcash",
     "bcfg": "git+https://github.com/bcoin-org/bcfg",
-    "bcrypto": "git+https://github.com/bcoin-org/bcrypto",
+    "bcrypto": "git+https://github.com/bcoin-org/bcrypto.git#semver:~5.5.0",
     "bcurl": "git+https://github.com/bcoin-org/bcurl",
     "bdb": "git+https://github.com/bcoin-org/bdb",
     "bdns": "git+https://github.com/bcoin-org/bdns",
@@ -50,15 +50,14 @@
     "bmutex": "git+https://github.com/bcoin-org/bmutex",
     "bsocks": "git+https://github.com/bcoin-org/bsocks",
     "btcp": "git+https://github.com/bcoin-org/btcp",
-    "buffer-map": "git+https://github.com/chjj/buffer-map#semver:0.0.7",
+    "buffer-map": "git+https://github.com/chjj/buffer-map",
     "bupnp": "git+https://github.com/bcoin-org/bupnp",
     "bval": "git+https://github.com/bcoin-org/bval",
     "bweb": "git+https://github.com/bcoin-org/bweb",
-    "n64": "git+https://github.com/chjj/n64.git#semver:~0.2.10",
-    "uglify-es": "^3.3.9"
+    "n64": "git+https://github.com/chjj/n64"
   },
   "devDependencies": {
-    "bmocha": "git+https://github.com/bcoin-org/bmocha#semver:^2.1.2"
+    "bmocha": "git+https://github.com/bcoin-org/bmocha"
   },
   "browser": {
     "./lib/bmultisig": "./lib/bmultisig-browser.js"
